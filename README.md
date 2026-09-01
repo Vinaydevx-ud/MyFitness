@@ -1,16 +1,84 @@
-# React + Vite
+ MyFitness
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+MyFitness is a React-based fitness tracking web application designed to help users understand their body metrics, calculate their daily protein requirements, explore protein-rich food sources, and set fitness goals.
 
-Currently, two official plugins are available:
+ Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+ BMI Calculator
 
-## React Compiler
+ Calculate BMI using height and weight.
+ Display BMI value.
+ Suggest body type according to the calculated BMI.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+ Protein Requirement Calculator
 
-## Expanding the ESLint configuration
+* Calculate daily protein requirements based on body weight.
+* Protein requirement changes according to the selected fitness goal.
+* Supports goals such as:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+  * Fat Loss
+  * Lean - Muscle
+  * Bulk
+
+ Protein Sources
+
+* Display different protein-rich food sources.
+* Helps users identify foods that can contribute to their daily protein intake.
+
+ Goal Selection
+
+* Select a fitness goal.
+* Set a target date.
+* Enter current weight.
+* Enter target weight.
+* Display progress toward the target weight.
+
+## 🛠️ Technologies Used
+
+* React.js
+* JavaScript
+* HTML5
+* CSS3
+* React Router
+* Local Storage
+
+
+
+ Installation
+
+Clone the repository:
+
+```bash
+https://github.com/Vinaydevx-ud/MyFitness.git
+```
+
+Navigate to the project directory:
+
+```bash
+cd myfitness
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the development server:
+
+```bash
+npm run dev
+```
+
+Open the local URL provided by Vite in your browser.
+
+ Live Demo
+
+[View Live Project](https://my-fitness-pearl.vercel.app)
+
+
+ Author
+
+Vinay Kumar
+
+Frontend Developer | React.js
