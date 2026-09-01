@@ -1,0 +1,258 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #f8fafc;
+  padding: 20px;
+}
+.header {
+  background-color: #1e293b;
+  color: white;
+  text-align: center;
+  padding: 30px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+.header h1 {
+  margin-bottom: 10px;
+  background: none;
+}
+.header p {
+  margin-bottom: 10px;
+  background: none;
+}
+.navbar {
+  background-color: #7de498;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  gap: 150px;
+  margin-bottom: 10px;
+}
+.navbar a {
+  text-decoration: none;
+  background-color: #49c04f;
+  color: white;
+  border: solid 2px #159350;
+  border-radius: 6px;
+  padding: 6px;
+  cursor: pointer;
+}
+.protein-calculations-top {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+  align-items: stretch;
+}
+.fa-bars-progress,
+.fa-bullseye,
+.fa-circle-check .fa-clock {
+  color: rgb(68, 68, 169);
+  font-size: large;
+}
+.fa-regular {
+  color: rgb(68, 68, 169);
+  font-size: large;
+}
+
+.daily-protein-progress {
+  flex: 1;
+  padding: 25px;
+  border-radius: 12px;
+  background: white;
+  border: 1px solid #cbd5e1;
+  margin: 0;
+}
+.daily-protein-progress h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #1e293b;
+}
+
+.goal,
+.consumed,
+.remaining {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 5px;
+  font-size: 17px;
+}
+.daily-protein-progress h3 {
+  text-align: center;
+}
+.goal,
+.consumed {
+  border-bottom: 1px solid #e2e8f0;
+}
+.progress-bar {
+  width: 100%;
+  height: 16px;
+  background: #e2e8f0;
+  border-radius: 50px;
+  margin: 20px 0;
+}
+
+.progress-fill {
+  width: 64%; 
+  height: 100%;
+  background: #22c55e;
+  border-radius: 50px;
+}
+.fa-fire {
+  color: orange;
+}
+.protein-requirement-calculator {
+  flex: 1;
+  padding: 25px;
+  border-radius: 12px;
+  background: white;
+  border: 1px solid #cbd5e1;
+  margin: 0;
+}
+.protein-requirement-calculator h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #1e293b;
+}
+.fa-calculator {
+  color: rgb(68, 68, 169);
+  font-size: large;
+}
+.fa-weight-scale {
+  color: rgb(68, 68, 169);
+  font-size: large;
+}
+
+.weight-section {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 20px;
+  margin-right: 20px;
+  font-size: 17px;
+  padding: 15px 5px;
+}
+.weight-input input {
+  width: 220px;
+  padding: 5px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 15px;
+  outline: none;
+}
+.goal-section {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 20px;
+  margin-right: 20px;
+  font-size: 17px;
+  padding: 15px 5px;
+}
+.goal-input select {
+  width: 220px;
+  padding: 10px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+}
+.calculate-btn {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+.fa-calculator {
+  color: white;
+}
+.calculate-btn button {
+  background: #22c55e;
+  color: white;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.recommended-protein-intake {
+  margin-top: 15px;
+  text-align: center;
+  background: #dcfce7;
+  border: 1px solid #86efac;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.recommended-protein-intake h2 {
+  margin: 0;
+  color: #15803d;
+  font-size: 30px;
+}
+.protein-requirement-calculator h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #1e293b;
+}
+.protein-calculations-bottom {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+  align-items: stretch;
+}
+.protein-sources {
+  flex: 1;
+  padding: 25px;
+  border-radius: 12px;
+  background: white;
+  border: 1px solid #cbd5e1;
+  margin: 0;
+}
+.protein-sources h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #1e293b;
+}
+table {
+  width: 100%;
+  margin-top: 15px;
+  background: white;
+  border-radius: 12px;
+}
+
+th {
+  background: #4f46e5;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  font-size: 20px;
+  letter-spacing: 1px;
+  border-radius: 4px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+td {
+  padding: 20px;
+  text-align: center;
+  border-bottom: 1px solid #e5e7eb;
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+.quick-add-protein {
+  flex: 1;
+  padding: 25px;
+  border-radius: 12px;
+  background: white;
+  border: 1px solid #cbd5e1;
+  margin: 0;
+}
+.quick-add-protein h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #1e293b;
+}
