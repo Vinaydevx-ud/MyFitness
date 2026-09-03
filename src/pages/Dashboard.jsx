@@ -66,12 +66,14 @@ function Dashboard() {
               <h2>Food Suggestions</h2>
               <p>Choose meal type</p>
 
-              <Link to="/protein" className="foodbutton">
-                Veg
-              </Link>
-              <Link to="/protein" className="foodbutton">
-                Non-Veg
-              </Link>
+              <div className="food-options">
+                <Link to="/protein" className="foodbutton">
+                  Veg
+                </Link>
+                <Link to="/protein" className="foodbutton">
+                  Non-Veg
+                </Link>
+              </div>
             </div>
 
             <div className="progress-card">
