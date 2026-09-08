@@ -4,32 +4,27 @@ import {useState,useEffect} from 'react'
 
 function Goal() {
   const [goal, setGoal] = useState("fat-loss");
-  const [targetDate, setTargetDate] = useState("");
-  const [targetWeight,setTargetWeight] = useState("");
+  const [targetDate, setTargetDate] = useState(() => {
+    const savedtargetDate = JSON.parse(localStorage.getItem("targetDate"));
+    return savedtargetDate ? savedTargetDate : "DD/MM/YYYY"
+  });
+  const [targetWeight,setTargetWeight] = useState(() => {
+    const savedtargetWeight = JSON.parse(localStorage.getItem("targetWeight"));
+    return savedtargetWeight ? savedtargetWeight : "0";
+  });
   const [currentWeight,setCurrentWeight] = useState("");
 
   const weightProgress =
    targetWeight && currentWeight ? Math.min((currentWeight / targetWeight) * 100, 100):0;
 
-  useEffect(() => {
-    const savedtargetDate = JSON.parse(localStorage.getItem("targetDate"));
-    if(savedtargetDate){
-      setTargetDate(savedtargetDate);
-    }
-  },[])
+  
 
   useEffect (() => {
     localStorage.setItem("targetDate",JSON.stringify(targetDate)
     )
   },[targetDate])
 
-  useEffect(() => {
-    const savedtargetWeight = JSON.parse(localStorage.getItem("targetWeight"));
-    if (savedtargetWeight) {
-      setTargetWeight(savedtargetWeight);
-    }
-  }, []);
-
+  
   useEffect(() => {
     localStorage.setItem("targetWeight", JSON.stringify(targetWeight));
   }, [targetWeight]);
