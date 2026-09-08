@@ -6,7 +6,7 @@ function Goal() {
   const [goal, setGoal] = useState("fat-loss");
   const [targetDate, setTargetDate] = useState(() => {
     const savedtargetDate = JSON.parse(localStorage.getItem("targetDate"));
-    return savedtargetDate ? savedTargetDate : "DD/MM/YYYY"
+    return savedtargetDate ? savedtargetDate : "DD/MM/YYYY"
   });
   const [targetWeight,setTargetWeight] = useState(() => {
     const savedtargetWeight = JSON.parse(localStorage.getItem("targetWeight"));
