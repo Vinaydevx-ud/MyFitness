@@ -3,9 +3,19 @@ import { Link } from "react-router-dom";
 import { useState,useEffect } from "react";
 
 function Body() {
-  const [weight, setWeight] = useState("");
-  const [height, setHeight] = useState("");
-  const [bmi, setBmi] = useState(null);
+  const [weight, setWeight] = useState(() =>{
+     const savedWeight = JSON.parse(localStorage.getItem("weight"));
+     return savedWeight ? savedWeight : "0";
+  }
+  );
+  const [height, setHeight] = useState(() => {
+     const savedHeight = JSON.parse(localStorage.getItem("height"));
+     return savedHeight ? savedHeight : "0";
+  });
+  const [bmi, setBmi] = useState(() => {
+    const savedBMI = JSON.parse(localStorage.getItem("bmi"));
+    return savedBMI ? savedBMI : "0";
+  });
 
   const calculateBMI = () => {
     if (!weight || !height) {
@@ -18,12 +28,7 @@ function Body() {
     setBmi(calculatedBMI.toFixed(2));
   };
 
-  useEffect(() => {
-    const savedWeight = JSON.parse(localStorage.getItem("weight"));
-    if (savedWeight) {
-      setWeight(savedWeight)
-    }
-  },[])
+  
 
   useEffect(() => {
     localStorage.setItem("weight",JSON.stringify(weight)
@@ -31,23 +36,13 @@ function Body() {
     )
   },[weight])
 
-  useEffect(() => {
-    const savedHeight = JSON.parse(localStorage.getItem("height"));
-    if (savedHeight) {
-      setHeight(savedHeight);
-    }
-  }, []);
+  
 
   useEffect(() => {
     localStorage.setItem("height", JSON.stringify(height));
   }, [height]);
 
-  useEffect(() => {
-    const savedBMI = JSON.parse(localStorage.getItem("bmi"));
-    if (savedBMI) {
-      setBmi(savedBMI);
-    }
-  }, []);
+  
 
   useEffect(() => {
     localStorage.setItem("bmi", JSON.stringify(bmi));

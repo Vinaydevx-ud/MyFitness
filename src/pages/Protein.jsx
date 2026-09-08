@@ -4,7 +4,10 @@ import { Link } from "react-router-dom";
 
 function Protein() {
   
-  const [weight,setWeight] = useState("");
+  const [weight,setWeight] = useState(()=>{
+    const savedWeight = JSON.parse(localStorage.getItem("weight"));
+    return savedWeight ? savedWeight : "0";
+  });
   const [goal, setGoal] = useState("fatLoss");
   const [protein,setProtein] = useState(null);
   const [consumed,setConsumed] = useState("");
@@ -27,12 +30,7 @@ function Protein() {
 
   };
 
-  useEffect(() => {
-    const savedWeight = JSON.parse(localStorage.getItem("weight"));
-    if(savedWeight){
-      setWeight(savedWeight)
-    }
-  },[])
+  
   
   useEffect(() => {
     localStorage.setItem("weight", JSON.stringify(weight)
@@ -42,7 +40,7 @@ function Protein() {
   useEffect(() => {
     const savedGoal = JSON.parse(localStorage.getItem("goal"));
     if (savedGoal) {
-      setWeight(savedGoal);
+      setGoal(savedGoal);
     }
   }, []);
 
@@ -128,7 +126,7 @@ function Protein() {
           <div className="recommended-protein-intake">
             <h3>Recommended Protein Intake</h3>
 
-            <h2>{protein  ? protein : "--"} gm </h2>
+            <h2>{protein ? Math.floor(protein) : "--"} gm </h2>
           </div>
         </div>
         <div className="daily-protein-progress">
@@ -142,7 +140,7 @@ function Protein() {
               <i className="fa-solid fa-bullseye"></i>
               Goal
             </span>
-            <span>{protein  ? protein : "--"} gm</span>
+            <span>{protein ? Math.floor(protein) : "--"} gm</span>
           </div>
 
           <div className="consumed">
@@ -164,7 +162,7 @@ function Protein() {
               <i className="fa-regular fa-clock"></i>
               Remaining
             </span>
-            <span>{remaining ? remaining : "--"} gm</span>
+            <span>{remaining ? Math.floor(remaining) : "--"} gm</span>
           </div>
 
           <div className="progress-bar">
